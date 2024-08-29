@@ -1,37 +1,63 @@
-document.getElementById('convertButton').addEventListener('click', function() {
-    const tempInput = parseFloat(document.getElementById('temperatureInput').value);
-    const inputUnit = document.getElementById('inputUnit').value;
-    const outputUnit = document.getElementById('outputUnit').value;
-    const resultDiv = document.getElementById('result');
+let display = document.getElementById('display');
+let currentInput = '';
+let operator = '';
+let firstOperand = null;
 
-    if (isNaN(tempInput)) {
-        resultDiv.textContent = 'Please enter a valid number.';
-        return;
+function clearDisplay() {
+    currentInput = '';
+    operator = '';
+    firstOperand = null;
+    display.textContent = '0';
+}
+
+function deleteLast() {
+    currentInput = currentInput.slice(0, -1);
+    display.textContent = currentInput || '0';
+}
+
+function appendNumber(number) {
+    if (currentInput.length < 10) {
+        currentInput += number;
+        display.textContent = currentInput;
     }
+}
 
-    let convertedTemp;
-
-    if (inputUnit === outputUnit) {
-        convertedTemp = tempInput;
-    } else if (inputUnit === 'celsius') {
-        if (outputUnit === 'fahrenheit') {
-            convertedTemp = (tempInput * 9/5) + 32;
-        } else if (outputUnit === 'kelvin') {
-            convertedTemp = tempInput + 273.15;
-        }
-    } else if (inputUnit === 'fahrenheit') {
-        if (outputUnit === 'celsius') {
-            convertedTemp = (tempInput - 32) * 5/9;
-        } else if (outputUnit === 'kelvin') {
-            convertedTemp = (tempInput - 32) * 5/9 + 273.15;
-        }
-    } else if (inputUnit === 'kelvin') {
-        if (outputUnit === 'celsius') {
-            convertedTemp = tempInput - 273.15;
-        } else if (outputUnit === 'fahrenheit') {
-            convertedTemp = (tempInput - 273.15) * 9/5 + 32;
-        }
+function appendOperator(op) {
+    if (currentInput !== '') {
+        firstOperand = parseFloat(currentInput);
+        operator = op;
+        currentInput = '';
     }
+}
 
-    resultDiv.textContent = `Converted Temperature: ${convertedTemp.toFixed(2)}° ${outputUnit.charAt(0).toUpperCase() + outputUnit.slice(1)}`;
-});
+function appendDot() {
+    if (!currentInput.includes('.')) {
+        currentInput += '.';
+        display.textContent = currentInput;
+    }
+}
+
+function calculateResult() {
+    if (firstOperand !== null && currentInput !== '') {
+        const secondOperand = parseFloat(currentInput);
+        let result;
+        switch (operator) {
+            case '+':
+                result = firstOperand + secondOperand;
+                break;
+            case '-':
+                result = firstOperand - secondOperand;
+                break;
+            case '*':
+                result = firstOperand * secondOperand;
+                break;
+            case '/':
+                result = firstOperand / secondOperand;
+                break;
+        }
+        display.textContent = result.toString().slice(0, 10);
+        firstOperand = null;
+        currentInput = result.toString();
+        operator = '';
+    }
+}
