@@ -3,150 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sariya Afreen - Portfolio</title>
+    <title>Advanced Temperature Converter</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header id="Home">
-        <nav>
-            <div class="logo">
-                <h1>Sariya Afreen</h1>
+    <div class="container">
+        <h1>Advanced Temperature Converter</h1>
+        <div class="converter">
+            <input type="number" id="temperatureInput" placeholder="Enter temperature" />
+            <div class="unit-container">
+                <select id="inputUnit">
+                    <option value="celsius">Celsius (°C)</option>
+                    <option value="fahrenheit">Fahrenheit (°F)</option>
+                    <option value="kelvin">Kelvin (K)</option>
+                </select>
+                <span>to</span>
+                <select id="outputUnit">
+                    <option value="celsius">Celsius (°C)</option>
+                    <option value="fahrenheit">Fahrenheit (°F)</option>
+                    <option value="kelvin">Kelvin (K)</option>
+                </select>
             </div>
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="header-content">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Front End Developer | Tech Enthusiast</p>
-            <a href="#about" class="btn">Learn More</a>
+            <button id="convertButton">Convert</button>
+            <div id="result" class="result"></div>
         </div>
-    </header>
-
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="content">
-            <img src="vb.jfif" alt="Your Image" class="profile-pic">
-            <div class="text">
-                <p>Hello! I'm <b>Sariya Afreen</b>, a front-end developer and C/C++ programmer. I specialize in creating engaging and responsive web interfaces using HTML, CSS, and JavaScript, with experience in frameworks like React and Bootstrap.In addition to my web development expertise, I have a strong foundation in C and C++ programming. This background enables me to handle system-level programming, algorithm optimization, and software development for performance-critical applications.</p>
-                
-                <div class="horizontal-container">
-                    <div class="section-container">
-                        <h3>Hobbies</h3>
-                        <h4>Travelling</h4>
-                        <h4>Cooking</h4>
-                        <h4>Playing Carrom</h4>
-                    </div>
-                
-                    <div class="section-container">
-                        <h3>Education</h3>
-                        <h4>B.Tech in IT From GCOE Amravati</h4>
-                        <h4>Diploma in Computer from Dr.Panjabrao Deshmukh Polytechnic Amravati</h4>
-                    </div>
-                
-                    <div class="section-container">
-                        <h3>Languages</h3>
-                        <h4>Urdu</h4>
-			<h4>English</h4>
-                        <h4>Hindi</h4>
-                        <h4>Marathi</h4>
-			<h4>Marathi</h4>
-                    </div>
-                </div>
-                
-
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <h2 style="margin-left: 22px;">Skills</h2>
-        <div class="skill-container">
-            <div class="skill">
-                <h3>HTML</h3>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 90%;">90%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>CSS</h3>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 75%;">75%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>JavaScript</h3>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 70%;">70%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>React</h3>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 60%;">60%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>C</h3>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 90%;">90%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>C++</h3>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 85%;">85%</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
-    <section id="projects" class="projects">
-        <h2 style="margin-top: 55px;">Projects</h2>
-        <div class="project-container">
-            <div class="project">
-                <h3>Project 1: Food Ordering System</h3>
-                <p>A streamlined HTML and CSS-based food ordering system with an intuitive layout. Users can easily browse menus, select items, and place orders through a clean and responsive interface.</p>
-                <a href="#" class="btn">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Project 2: Weather Monitoring System</h3>
-                <p>A dynamic weather monitoring system built with HTML, CSS, and JavaScript. It provides real-time weather updates and forecasts through a user-friendly interface.</p>
-                <a href="#" class="btn" style="margin-top: 30px;">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Project 3: MathMaster Calculator  </h3>
-                <p>A versatile calculator built with HTML, CSS, JavaScript, and React. It features a user-friendly interface for performing basic and advanced mathematical operations, providing real-time calculations.</p>
-                <a href="#" class="btn">View Project</a>
-            </div>
-            
-            <div class="project">
-                <h3>Project 4: Age Tracker</h3>
-                <p>An interactive age calculator built using HTML, CSS, and React. Users input their birthdate to instantly calculate their age. The app features a modern design and responsive layout, providing an easy-to-use interface for age <calculation class=""></calculation></p>
-                <a href="#" class="btn">View Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <div class="contact-info">
-            <p>If you'd like to get in touch, feel free to reach out via email or connect with me on LinkedIn.</p>
-            <p>Email: nawabsariya2003@gmail.com</p>
-            <p>Phone: 9096092806</p>
-            <p>LinkedIn: <a href="www.linkedin.com/in/sariya-afreen-541306289" target="_blank">linkedin.com/in/sariya_afreen</a></p>
-            <p>GitHub: <a href="https://github.com/SariyaAfreen" target="_blank">github.com/sariya_afreen</a></p>
-        </div>
-    </section>
-    
-
-    <footer>
-        <p>&copy; 2024 Sariya Afreen. All rights reserved.</p>
-    </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
